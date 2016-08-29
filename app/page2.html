@@ -1,5 +1,13 @@
 <div>
     <span>Random Text</span>
     <span data-bind="text: data.name"></span>
+    
+    <div>
+        <h1>Widgets</h1>
+        <div data-bind="timer: { items: data.projects }">
+            <h2 data-part="header">Project: <span data-bind="text: name"></span></h2>
+        </div>
+        
+    </div>
 
 </div>

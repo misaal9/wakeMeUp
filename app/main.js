@@ -19,7 +19,10 @@ define(function (require) {
     
     app.configurePlugins({
         router: true,
-        dialog: true
+        dialog: true,
+        widget: {
+            kinds: ['timer']
+        }
     });
     
     app.start().then(function(){
