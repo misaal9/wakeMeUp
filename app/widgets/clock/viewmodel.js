@@ -23,15 +23,15 @@ define(function(require){
             currentDateLabel: "Today's Date",
         };
         this.mainHeaderTitle = ko.observable(this.data.currentTimeLabel);
-        this.dateTimeBtnLabel = ko.observable('Show Date');
+        this.dateTimeBtnLabel = ko.observable(this.data.showDateLabel);
         this.isCurrentTimeActive = ko.observable(true);
         this.isCurrentTimeActive.subscribe(function(isTimeActive){
             if (isTimeActive) {
                 self.dateTimeBtnLabel(self.data.showDateLabel);
-                self.mainHeaderTitle(self.data.currentDateLabel);
+                self.mainHeaderTitle(self.data.currentTimeLabel);
             } else {
                 self.dateTimeBtnLabel(self.data.showTimeLabel);
-                self.mainHeaderTitle(self.data.currentTimeLabel);
+                self.mainHeaderTitle(self.data.currentDateLabel);
             }
             
         });
