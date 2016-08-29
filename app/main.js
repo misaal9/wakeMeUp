@@ -22,12 +22,12 @@ define(function (require) {
         router: true,
         dialog: true,
         widget: {
-            kinds: ['example', 'clock']
+            kinds: ['clock', 'jumbotron', 'carousel']
         }
     });
     
     app.start().then(function(){
-        app.setRoot('shell');
+        app.setRoot('viewmodels/shell/shell');
     });
     
 });

@@ -6,8 +6,8 @@ define(function(require){
     shell.router = router;
     shell.activate = function activate(){
         router.map([
-            { route: '', moduleId: 'home', title: 'Home', nav: true },
-            { route: 'time', moduleId: 'time', title: 'Time', nav: true }
+            { route: '', moduleId: 'viewmodels/home/home', title: 'Home', nav: true },
+            { route: 'time', moduleId: 'viewmodels/time/time', title: 'Time', nav: true }
         ]).buildNavigationModel();
         
         return router.activate();
