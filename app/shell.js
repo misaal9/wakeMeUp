@@ -7,7 +7,7 @@ define(function(require){
     shell.activate = function activate(){
         router.map([
             { route: '', moduleId: 'home', title: 'Home', nav: true },
-            { route: 'pg2', moduleId: 'page2', title: 'Page 2', nav: true }
+            { route: 'time', moduleId: 'time', title: 'Time', nav: true }
         ]).buildNavigationModel();
         
         return router.activate();

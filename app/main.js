@@ -6,7 +6,8 @@ requirejs.config({
         'bootstrap': '../lib/bootstrap/js/bootstrap.min', 
         'durandal': '../lib/durandal/js',
         'plugins': '../lib/durandal/js/plugins',
-        'transitions': '../lib/durandal/js/transitions'
+        'transitions': '../lib/durandal/js/transitions',
+        'moment': '../lib/moment/moment.min'
     }
 });
 define(function (require) {
@@ -21,7 +22,7 @@ define(function (require) {
         router: true,
         dialog: true,
         widget: {
-            kinds: ['timer']
+            kinds: ['example', 'clock']
         }
     });
     
