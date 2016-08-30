@@ -68,13 +68,16 @@ define(function(require){
 
     ClockViewModel.prototype.getTime = function getTime() {
         var self = this;
-        var date;
-        var showDate;
+        self.setTime();
         setInterval( function (){
-            date = new Date();
-            showDate = moment(date).format('LTS');
-            self.currentTime(showDate);
+            self.setTime();
         }, 1000);
+    };
+    
+    ClockViewModel.prototype.setTime = function setTime() {
+        var date = new Date();
+        var showDate = moment(date).format('LTS');
+        this.currentTime(showDate);
     };
     
     return ClockViewModel;
