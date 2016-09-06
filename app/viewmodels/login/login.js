@@ -1,7 +1,6 @@
 define(function(require){
     'use strict';
     var app = require('durandal/app');
-    var LoginService = require('services/LoginService');
     var LoginViewModel = {};
     
     var STRINGS = {
