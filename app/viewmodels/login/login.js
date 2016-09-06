@@ -43,7 +43,7 @@ define(function(require){
         */
 
         /*
-        https://accounts.google.com/o/oauth2/v2/auth?response_type=token&redirect_uri=http://localhost:8000/oauthCallback&client_id=420550494003-kv6sh06gt3u1codqdao4tra8tjiu4qtq.apps.googleusercontent.com&scope=email%20profile
+        https://accounts.google.com/o/oauth2/v2/auth?response_type=token&redirect_uri=https://misaal9.github.io/wakeMeUp/oauthCallback&client_id=420550494003-kv6sh06gt3u1codqdao4tra8tjiu4qtq.apps.googleusercontent.com&scope=email%20profile
         */
     };
 
