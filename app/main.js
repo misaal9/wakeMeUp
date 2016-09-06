@@ -31,13 +31,10 @@ define(function (require) {
     app.start().then(function(){
         auth.init()
             .then(function(result){
-                console.info('auth respsone', result);
-                //app.setRoot('viewmodels/shell/shell');
+                console.debug('Logged in successfully');
             })
             .catch(function(err){
                 console.error(err.message);
-                //app.setRoot('viewmodels/shell/shell');
-                router.navigate('login');
                });
             });
         app.setRoot('viewmodels/shell/shell');

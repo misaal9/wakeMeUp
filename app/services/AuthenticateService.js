@@ -4,42 +4,38 @@ define(function(require){
         app = require('durandal/app');
 
     var AuthenticateService = {};
-    
-    AuthenticateService.compositionComplete = function compositionComplete() {
-        this.isUserLoggedInFlag = true;
-    };
+    var isUserLoggedInFlag = ko.observable(false);
     
     AuthenticateService.isUserLoggedIn = function isUserLoggedIn() {
-        return this.isUserLoggedInFlag;
+        return isUserLoggedInFlag();
     };
     
     AuthenticateService.init = function init() {
         var self = this;
-        var validAuth = ko.observable(true);
+        var validAuth = ko.observable(true); // todo - HARDCODED SHOULD BE REMVOED
         
         // do something to check authentication
         
         // use above method to resolve or reject the auth response
         var authPromise = new Promise(function(resolve, reject){
             if (validAuth()) {
+                isUserLoggedInFlag(true);
                 resolve({
                     status: 'Success',
                     message: 'Logged in successfully'
                 });
-                self.isUserLoggedInFlag = true;
                 
             } else {
+                isUserLoggedInFlag(false);
                 reject({
                     status: 'Fail',
                     message: 'Unable to login'
                 });
-                self.isUserLoggedInFlag = false;
             }
         });
-        
         return authPromise;
     };
-    
+
     return AuthenticateService;
 });
 

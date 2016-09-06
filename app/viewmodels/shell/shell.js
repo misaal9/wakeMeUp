@@ -17,15 +17,12 @@ define(function(require){
             { route: 'login', moduleId: 'viewmodels/login/login', title: 'Login', nav: true },
             { route: 'oauthCallback/:access_token', moduleId: 'viewmodels/login/processResponse', nav: false }
         ])
-            .buildNavigationModel()
-            .activate({
-                pushState: true
-            });
-        
-        console.info('Auth.isUserLoggedIn()', Auth.isUserLoggedIn());
+        .buildNavigationModel()
+        .activate({
+            pushState: true
+        });
         
         if (!Auth.isUserLoggedIn()) {
-            console.info('asdasd');
             router.navigate('login', {
                 trigger: true,
                 replace: true
