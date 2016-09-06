@@ -12,7 +12,9 @@ define(function(require){
             { route: 'oauthCallback/:access_token', moduleId: 'viewmodels/login/processResponse', nav: false }
         ]).buildNavigationModel();
         
-        return router.activate();
+        return router.activate({
+            pushState: true // removes '#' from urls
+        });
     };
     
     return shell;
