@@ -7,7 +7,13 @@ requirejs.config({
         'durandal': '../lib/durandal/js',
         'plugins': '../lib/durandal/js/plugins',
         'transitions': '../lib/durandal/js/transitions',
-        'moment': '../lib/moment/moment.min'
+        'moment': '../lib/moment/moment.min',
+        'gapi': 'https://apis.google.com/js/platform.js'
+    },
+    shim: {
+        'gapi': {
+            'exports': 'gapi'
+        }
     }
 });
 define(function (require) {

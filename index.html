@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Wake Me Up</title>
+        <meta name="google-signin-client_id" content="420550494003-kv6sh06gt3u1codqdao4tra8tjiu4qtq.apps.googleusercontent.com">
     </head>
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
         <link rel="stylesheet" href="lib/bootstrap/css/theme/cyborg/bs.cyborg.min.css" />
@@ -9,6 +10,26 @@
         <link rel="stylesheet" href="lib/durandal/css/durandal.css" />
     <body>
         <div id="applicationHost"></div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" onclick="signOut();">Sign out</a>
         <script type="text/javascript" src="lib/require/require.js" data-main="app/main"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script>
+            function onSignIn(googleUser) {
+                console.info('onSignIn');
+                var profile = googleUser.getBasicProfile();
+                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                console.log('Name: ' + profile.getName());
+                console.log('Image URL: ' + profile.getImageUrl());
+                console.log('Email: ' + profile.getEmail());
+            }
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                console.info('auth2', auth2);
+                auth2.signOut().then(function () {
+                    console.info('User signed out.');
+                });
+            }
+        </script>
     </body>
 </html>

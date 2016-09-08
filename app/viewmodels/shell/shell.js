@@ -19,7 +19,7 @@ define(function(require){
         ])
         .buildNavigationModel()
         .activate({
-            pushState: true
+            /*pushState: true*/
         });
         
         if (!Auth.isUserLoggedIn()) {
