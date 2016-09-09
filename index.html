@@ -10,11 +10,10 @@
         <link rel="stylesheet" href="lib/durandal/css/durandal.css" />
     <body>
         <div id="applicationHost"></div>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <a href="#" onclick="signOut();">Sign out</a>
+        <div class="g-signin2" data-onsuccess="onSignIn" hidden></div>
         <script type="text/javascript" src="lib/require/require.js" data-main="app/main"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <script>
+        <!--<script>
             function onSignIn(googleUser) {
                 console.info('onSignIn');
                 var profile = googleUser.getBasicProfile();
@@ -30,6 +29,6 @@
                     console.info('User signed out.');
                 });
             }
-        </script>
+        </script>-->
     </body>
 </html>
