@@ -6,15 +6,10 @@ define(function(require){
     shell.router = router;
     shell.activate = function activate(){
         router.map([
-            { route: '', moduleId: 'viewmodels/home/home', title: 'Home', nav: true },
-            { route: 'time', moduleId: 'viewmodels/time/time', title: 'Time', nav: true },
-            { route: 'login', moduleId: 'viewmodels/login/login', title: 'Login', nav: true },
-            { route: 'oauthCallback', moduleId: 'viewmodels/processResponse/processResponse', nav: false }
+            { route: '', moduleId: 'viewmodels/notReady/notReady', title: 'Not Ready' }
         ]).buildNavigationModel()
         
-        return router.activate({
-            pushState: true
-        });
+        return router.activate();
     };
     
     return shell;
